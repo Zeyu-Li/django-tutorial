@@ -10,8 +10,9 @@ This is a Django tutorial that goes through the in and outs of Django, a **Pytho
 2. [Setting Up](#setup)
 3. [Running](#running)
 4. [Project Overview](#overview)
-5. 
-6. [Miscellaneous](#misc)
+5. [Starting an App](#app)
+6. 
+7. [Miscellaneous](#misc)
 
 
 
@@ -123,6 +124,36 @@ Now you can go to http://127.0.0.1:8000/ and see the Django default homepage
 
 ## 4. Project Overview
 
+Now let us take a look at the Django project once generated.
+
+You will see in the Django project there are 3 things generated
+
+1. db.sqlite3 - the database for all the important info stored by Django (ie passwords, username, etc.). You can change from a SQLite database to another database style of your choice (ie. mySQL). 
+2. manage.py - the main initializer for your Django project
+3. Django project name folder - a folder containing critical info about your Django project
+
+Now let's dive into the Django project files
+
+* asgi.py and wsgi.py - are files that communicate with the web server (probably going to be [NGINX](https://www.nginx.com/))
+
+
+
+All of the files above should not be changed unless you absolutely 100% sure you know what you are doing
+
+* urls.py - this is where you specify URL paths so Django knows how to link a URL request to a webpage. You will be working with this script a lot to direct the user to the right web page 
+* settings.py - defines the settings of the entire project. There are many things inside the settings that are important, so here are some of the most important things
+  * This is the place where you can add modules to the project
+  * You can specify the path of your static files (ie CSS, JavaScript, Images)
+  * Change database engine
+  * Changing project into a production build
+  * Secret Key - a salt for your hashes; keep this secret by following this tutorial -> https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/#secret-key
+
+
+
+<a name='app'></a>
+
+## 5. Starting an App
+
 
 
 
@@ -131,7 +162,13 @@ Now you can go to http://127.0.0.1:8000/ and see the Django default homepage
 
 ## Miscellaneous
 
+**Convenience Scripts**
 
+If you look in the main repo directory, you will see 4 script files, 2 open and 2 start scripts. 
+
+The open scripts are to open the project in the virtual environment and to cd into the Django directory
+
+The start is the same as open but includes running the server as well. 
 
 
 
