@@ -11,8 +11,11 @@ This is a Django tutorial that goes through the in and outs of Django, a **Pytho
 3. [Running](#running)
 4. [Project Overview](#overview)
 5. [Starting an App](#app)
-6. 
-7. [Miscellaneous](#misc)
+6. [Notes Before we Start](#note)
+7. [Viewing a Homepage](#homepage)
+8. []
+9. 
+10. [Miscellaneous](#misc)
 
 
 
@@ -154,7 +157,57 @@ All of the files above should not be changed unless you absolutely 100% sure you
 
 ## 5. Starting an App
 
+Now we have Django set up, we need to start an **app**. In Django, apps are what is used to modularize the code. Each app can have its own functionality. To start the first app, enter
 
+```shell
+django-admin startapp #appNameHere
+```
+
+For this tutorial, I will name it login (I recommend apps being lowercase while the project is in uppercase for the sake of clarity)
+
+Now we see a new folder called login
+
+
+
+Now let us explore app folder. There are 5 files
+
+* admin.py - dealing with the admin site
+* apps.py - specifies some info about the app, won't need to touch it much
+* tests.py - testing things
+* models.py - changing the models relating to the app
+* views.py - handles the rendering of the webpage, you will work with this and models.py the most
+
+Know we understand the basics about the app, we can work on linking it up to the project
+
+To so this, we go to the INSTALLED_APPS in the settings and add the name of the app at the last element of the list
+
+
+
+<a name='note'></a>
+
+## 6. Notes Before we Start
+
+Before we start the main course, there are some things that you will need to know
+
+Once you make a new model (will explore these later), you will have to use
+
+```
+django-admin makemigrations
+```
+
+If you decide to change the model, you will need to 
+
+```shell
+python manage.py migrate
+```
+
+to migrate changes
+
+
+
+<a name='homepage'></a>
+
+## 7. Viewing a Homepage
 
 
 
