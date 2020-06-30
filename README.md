@@ -4,6 +4,8 @@ This is a Django tutorial that goes through the in and outs of Django, a **Pytho
 
 
 
+<a name='top'></a>
+
 ## Index
 
 1. [Getting Started](#start)
@@ -13,9 +15,10 @@ This is a Django tutorial that goes through the in and outs of Django, a **Pytho
 5. [Starting an App](#app)
 6. [Notes Before we Start](#note)
 7. [Viewing a Homepage](#homepage)
-8. []
-9. 
-10. [Miscellaneous](#misc)
+8. [Frontend](#front)
+9. [Login](#login)
+10. [End Note & Resources](#resources)
+11. [Miscellaneous](#misc)
 
 
 
@@ -163,7 +166,7 @@ Now we have Django set up, we need to start an **app**. In Django, apps are what
 django-admin startapp #appNameHere
 ```
 
-For this tutorial, I will name it login (I recommend apps being lowercase while the project is in uppercase for the sake of clarity)
+For this tutorial, I will name it tutorial (I recommend apps being lowercase while the project is in uppercase for the sake of clarity)
 
 Now we see a new folder called login
 
@@ -209,11 +212,61 @@ to migrate changes
 
 ## 7. Viewing a Homepage
 
+Now to make a homepage, go to the urls.py, import the views in the new app with
+
+```python
+from tutorial import views
+```
+
+then add a path to views.home (which we will make later). 
+
+```python
+urlpatterns = [
+    ...
+    path('', views.home, name='home'), #the name is so we can identify it later
+]
+```
+
+Now we can go to the views in the app and direct to the homepage
+
+```python
+# views.py
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'tutorial/home.html')
+```
+
+Now you need to make a templates folder in the app directory
+
+
+
+<a name='front'></a>
+
+## 8. Frontend
+
+
+
+
+
+<a name='resources'></a>
+
+## 10. End Note & Resources
+
+I hope you enjoyed this Django tutorial. I know this may have been short, and I have barely scratched the surface of Django's capabilities, but there are many resources online that can help you on your Django journey. In terms of next steps, I recommend making a Django ecommerce website as that is a fairly complex project that Django was designed for. Now I will list some resources for making a Django ecommerce website and some helpful Django documentation;
+
+* Official Django documentation: https://www.djangoproject.com/start/
+* YouTube ecommerce playlist by JustDjango: https://www.youtube.com/watch?v=z4USlooVXG0&list=PLLRM7ROnmA9F2vBXypzzplFjcHUaKWWP5
+
+\* BTW, JustDjango has some more amazing tutorials for all things Django, check it out: https://www.youtube.com/channel/UCRM1gWNTDx0SHIqUJygD-kQ
+
+* If you have a library card, most likely, they have access to [Lynda.com](https://www.lynda.com/), where has some Django courses
+
 
 
 <a name='misc'></a>
 
-## Miscellaneous
+## 11. Miscellaneous
 
 **Convenience Scripts**
 
@@ -224,6 +277,8 @@ The open scripts are to open the project in the virtual environment and to cd in
 The start is the same as open but includes running the server as well. 
 
 
+
+[**⬆ Back to top**](#top)
 
 ## License
 
