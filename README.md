@@ -239,13 +239,63 @@ def home(request):
 
 Now you need to make a templates folder in the app directory
 
+Within that template folder, you should make another folder of the same name of the app and then the home.html file. If you want to place the template folder in the main project directory, you must add 
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # directory is in base project dir
+        ...
+```
+
+to tell Django where your templates are located.
+
 
 
 <a name='front'></a>
 
 ## 8. Frontend
 
+Working with Django front end is very similar to working with a React or Angular template. You start off with a regular html page with other static files in its own separate folder in the main project
 
+Like the template above, if you wish to store the static files in the main project folder, you must specify by adding
+
+```python
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+```
+
+in the settings at the end of the file
+
+Now if you need static images, css, etc., you must specify in the template. 
+
+To do that, have 
+
+```django
+{% load static %} # at the start of the file
+```
+
+if you want to specify something stored in static, you must use the 
+
+```django
+{% static 'css/index.css' %}
+```
+
+As you may have notices, most Django expressions have the **{%** #someExpressionHere **%}** format. In these expressions, you can have **if statements, for loops, links to other URLs, and much, much more**
+
+
+
+<a name='login'></a>
+
+## 9. Login
+
+Django comes with an authentication system for all to use, but I recommend using **django-allauth** because it supports using other services (ie. Google, Facebook + more) as optional logins. This is usually the way most people will sign in and optionally it can be the only way people sign in. This can be useful because you won't have to deal with passwords offload it to that other service. 
+
+django-allauth can be installed by following the allauth [docs here](https://django-allauth.readthedocs.io/en/latest/installation.html). 
+
+See below for more resources on how to login
 
 
 

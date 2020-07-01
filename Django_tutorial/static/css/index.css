@@ -1,0 +1,19 @@
+body {
+    margin: auto 0;
+}
+
+div {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../images/background.jpg');
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 136px;
+    color: aliceblue;
+}
