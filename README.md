@@ -287,6 +287,8 @@ As you may have notices, most Django expressions have the **{%** #someExpression
 
 
 
+\* **Important Note**, if you are updating your front end, but your browser is not showing any changes, it is because the browser is caching the css and js, therefore, you have to hard reset the page (usually the keyboard shortcut is Ctrl+f5)
+
 <a name='login'></a>
 
 ## 9. Login
